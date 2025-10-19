@@ -1,0 +1,56 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: openlineage-llm-postgres
+    platform: linux/amd64
+    environment:
+      POSTGRES_USER: marquez
+      POSTGRES_PASSWORD: marquez
+      POSTGRES_DB: marquez
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U marquez"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  marquez:
+    image: marquezproject/marquez:latest
+    container_name: sandscriptai-marquez
+    platform: linux/amd64
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./marquez-config.yml:/usr/src/app/config.yml:ro
+    environment:
+      MARQUEZ_CONFIG: /usr/src/app/config.yml
+    ports:
+      - "3000:5000"   # API -> http://localhost:3000
+      - "3001:5001"   # Admin -> http://localhost:3001
+
+  banner:
+    image: busybox:1.36
+    container_name: sandscriptai-banner
+    depends_on:
+      marquez:
+        condition: service_started
+    # Pick up your namespace and URL from host env (or fall back to defaults)
+    environment:
+      NAMESPACE: ${OPENLINEAGE_NAMESPACE:-ai-apps}
+      API_URL: ${OPENLINEAGE_URL:-http://localhost:3000}
+    command: >
+      sh -lc '
+      until wget -qO- http://marquez:5001/healthcheck >/dev/null 2>&1; do
+        echo "waiting for Marquez..."; sleep 1;
+      done;
+      printf "\n";
+      printf "┌──────────────────────────────────────────────────────────┐\n";
+      printf "│  Sandscript AI — OpenLineage LLM Demo (Marquez API)      │\n";
+      printf "│  Namespace: %s                                           │\n" "$NAMESPACE";
+      printf "│  URL: %s                                                 │\n" "$API_URL";
+      printf "└──────────────────────────────────────────────────────────┘\n";
+      '
+    restart: "no"
+

@@ -1,0 +1,2 @@
+[console_scripts]
+ol-generate-code = openlineage.client.generator.cli:main

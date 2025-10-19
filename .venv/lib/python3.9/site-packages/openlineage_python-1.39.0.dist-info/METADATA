@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: openlineage-python
+Version: 1.39.0
+Summary: OpenLineage Python Client
+Author-email: OpenLineage <info@openlineage.io>
+License-File: LICENSE
+Keywords: openlineage
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.9
+Requires-Dist: attrs>=20.0
+Requires-Dist: build>=1.2.2
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: packaging>=21.0
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pyyaml>=5.4
+Requires-Dist: requests>=2.32.4
+Provides-Extra: datazone
+Requires-Dist: boto3>=1.34.134; extra == 'datazone'
+Provides-Extra: docs
+Requires-Dist: beautifulsoup4>=4.12.0; extra == 'docs'
+Requires-Dist: pydata-sphinx-theme>=0.13; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints>=2.0.0; extra == 'docs'
+Requires-Dist: sphinx>=7.0; extra == 'docs'
+Provides-Extra: fsspec
+Requires-Dist: fsspec>=2023.1.0; extra == 'fsspec'
+Provides-Extra: gcplineage
+Requires-Dist: google-cloud-datacatalog-lineage>=0.3.14; extra == 'gcplineage'
+Provides-Extra: generator
+Requires-Dist: click; extra == 'generator'
+Requires-Dist: datamodel-code-generator==0.33.0; extra == 'generator'
+Requires-Dist: ruff; extra == 'generator'
+Provides-Extra: kafka
+Requires-Dist: confluent-kafka>=2.1.1; extra == 'kafka'
+Provides-Extra: msk-iam
+Requires-Dist: aws-msk-iam-sasl-signer-python>=1.0.1; extra == 'msk-iam'
+Requires-Dist: confluent-kafka>=2.1.1; extra == 'msk-iam'
+Provides-Extra: test
+Requires-Dist: covdefaults>=2.3; extra == 'test'
+Requires-Dist: fastapi>=0.100.0; extra == 'test'
+Requires-Dist: pytest-cov>=4.1; extra == 'test'
+Requires-Dist: pytest-mock>=3.10; extra == 'test'
+Requires-Dist: pytest>=7.3.1; extra == 'test'
+Requires-Dist: pyyaml>=5.4; extra == 'test'
+Requires-Dist: uvicorn>=0.20.0; extra == 'test'
+Description-Content-Type: text/markdown
+
+# OpenLineage Python Client
+
+Python client for [OpenLineage](https://openlineage.io).
+
+Refer to the [documentation](https://openlineage.io/docs/client/python) for details.

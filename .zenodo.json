@@ -1,0 +1,16 @@
+{
+  "title": "openlineage-llm: OpenLineage exporter for AI runs",
+  "upload_type": "software",
+  "description": "Emit OpenLineage events from LangChain, LiteLLM, or custom pipelines into Marquez. Tracks prompts, models, datasets, tokens, cost, and latency as standard lineage facets.",
+  "creators": [
+    {
+      "name": "Rajdev, Rohit",
+      "affiliation": "Sandscript AI LLC",
+      "orcid": "0009-0009-6833-0050"
+    }
+  ],
+  "keywords": ["OpenLineage", "Marquez", "LLM", "LangChain", "LiteLLM", "Observability", "Lineage"],
+  "license": "MIT",
+  "version": "0.1.0",
+  "notes": "Whitepaper: Unifying Data & Model Lineage with Open Standards."
+}

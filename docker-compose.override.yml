@@ -1,0 +1,8 @@
+services:
+  marquez:
+    ports:
+      - "3000:5000"   # host:container (API exposed on http://localhost:3000)
+
+
+
+
