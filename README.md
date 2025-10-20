@@ -120,4 +120,8 @@ python -m pytest
 
 ---
 
+## Cite
+Rajdev, R. (2025). *openlineage-llm: OpenLineage exporter for AI runs* (v0.1.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.17394175
+
+
 **License:** MIT
