@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17394175.svg)](https://doi.org/10.5281/zenodo.17394175)
+
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0009--6833--0050-brightgreen)](https://orcid.org/0009-0009-6833-0050)
 
 # openlineage-llm — OpenLineage exporter for AI runs
