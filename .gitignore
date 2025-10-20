@@ -1,0 +1,37 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache/build
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+*.log
+
+# Test/coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type/checker caches
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# Editors/OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
